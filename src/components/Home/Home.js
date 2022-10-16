@@ -1,11 +1,13 @@
 import React from 'react'
-import { Example } from '../Example'
+import { Score } from '../Score'
 
 export const Home = () => {
   return (
     <div>
         <h1>Home</h1>
-        <Example />
+        <Score gameId={2} />
+        <Score gameId={4} />
+        <Score gameId={5} />
     </div>
   )
 }
