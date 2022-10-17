@@ -1,3 +1,11 @@
+:root {
+  --floral-white: #fffcf2ff;
+  --pale-silver: rgb(219, 214, 193);
+  --black-olive: #403d39ff;
+  --eerie-black: #252422ff;
+  --flame: #eb5e28ff;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +18,24 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html, body {
+  background-color: var(--black-olive);
+}
+
+.background {
+  background-color: var(--black-olive);
+} 
+
+.flame {
+  color: var(--flame)
+}
+
+.white {
+  color: var(--floral-white);
+}
+
+.black {
+  background-color: var(--eerie-black);
 }

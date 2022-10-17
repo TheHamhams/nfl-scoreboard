@@ -15,9 +15,10 @@ export const All = () => {
 
 
   return (
-    <div>
+    <div className='background pt-5'>
 
-    { all }
+        <h1 className='my-3 flame text-center'>{score.events[0].weekText}</h1>
+        { all }
 
         
     </div>

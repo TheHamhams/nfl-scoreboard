@@ -13,7 +13,7 @@ export const NavBar = () => {
 //   const onLogout = () => logout({ returnTo: window.location.origin })
 
   return (
-    <Navbar bg='dark' variant='dark'>
+    <Navbar bg='dark' className="fixed-top" variant='dark'>
     <Container>
       <Navbar.Brand href='/'>NFL ScoreBoard</Navbar.Brand> 
       <Nav className='ms-auto'>
