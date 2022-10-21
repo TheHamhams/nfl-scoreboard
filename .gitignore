@@ -26,3 +26,4 @@ src/firebaseConfig.js
 .firebaserc
 firebase.json
 .gitignore
+.firebase
