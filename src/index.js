@@ -4,6 +4,7 @@ import './index.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { Home, All, NavBar } from './components/index'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {firebaseConfig} from './firebaseConfig'
 
 ReactDOM.render(
   <React.StrictMode>
