@@ -36,7 +36,7 @@ export const Score = (props) => {
                 </Col>
 
                 <Col className='col-6'>
-                    {score.events[props.gameId].competitors[0].displayName} : {score.events[props.gameId].competitors[0].score} 
+                    {score.events[props.gameId].competitors[0].name} : {score.events[props.gameId].competitors[0].score} 
                     
                 </Col>
                 
@@ -56,7 +56,8 @@ export const Score = (props) => {
                     </Col>
 
                     <Col className='col-6'>
-                        {score.events[props.gameId].competitors[1].displayName} : {score.events[props.gameId].competitors[1].score} 
+                        
+                        {score.events[props.gameId].competitors[1].name} : {score.events[props.gameId].competitors[1].score} 
 
                         
                     </Col>
