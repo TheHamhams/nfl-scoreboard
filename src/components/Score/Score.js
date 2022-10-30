@@ -4,9 +4,35 @@ import React, {useEffect, useState} from 'react'
 import { FetchScore } from '../../custom-hooks/FetchScore'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFootball } from '@fortawesome/free-solid-svg-icons'
+import { server_calls } from '../../api'
 
 export const Score = (props) => {
     let { score, setScore } = FetchScore()
+    let [time, setTime] = useState(0)
+    
+    let timer
+
+    async function handleDataFetch() {
+        const result = await server_calls.get()
+        setScore(result.sports[0].leagues[0])
+    }
+    
+    useEffect(() => {
+        if (score.events[props.gameId].fullStatus.type.name === "STATUS_IN_PROGRESS"){
+            // console.log("bing")
+            handleDataFetch()
+            clearInterval(timer)
+            timer = setInterval(() => setTime(time += 1), 30000)
+        } 
+        else if (score.events[props.gameId].fullStatus.type.name === "STATUS_SCHEDULED"){
+            handleDataFetch()
+            clearInterval(timer)
+            timer = setInterval(() => setTime(time += 1), 60000 * 15)
+        }
+        
+        
+        
+    }, [time])
     
     if (!score) {
         return "loading"
