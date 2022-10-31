@@ -18,13 +18,17 @@ export const Score = (props) => {
     }
     
     useEffect(() => {
-        if (score.events[props.gameId].fullStatus.type.name === "STATUS_IN_PROGRESS"){
+        if (!score) {
+            clearInterval(timer)
+            timer = setInterval(() => setTime(time += 1), 1000)
+        }
+        if (score && score.events[props.gameId].fullStatus.type.name === "STATUS_IN_PROGRESS"){
             // console.log("bing")
             handleDataFetch()
             clearInterval(timer)
             timer = setInterval(() => setTime(time += 1), 30000)
         } 
-        else if (score.events[props.gameId].fullStatus.type.name === "STATUS_SCHEDULED"){
+        else if (score && score.events[props.gameId].fullStatus.type.name === "STATUS_SCHEDULED"){
             handleDataFetch()
             clearInterval(timer)
             timer = setInterval(() => setTime(time += 1), 60000 * 15)
